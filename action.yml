@@ -1,7 +1,7 @@
 name: 'BigQuery SQL execution with Slack Notification for results'
 description: 'Send slack notification with BQ results'
 branding:
-  icon: 'activity'  
+  icon: 'activity'
   color: 'green'
 inputs:
   slack_webhook:
