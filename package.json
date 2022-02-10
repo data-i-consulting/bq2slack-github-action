@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/index.js",
     "build": "ncc build src -o dist -q",
-    "test": "jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "repository": {
     "type": "git",
