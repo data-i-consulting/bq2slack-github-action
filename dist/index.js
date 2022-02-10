@@ -64659,9 +64659,16 @@ var src = __nccwpck_require__(5390);
 ;// CONCATENATED MODULE: ./src/utils/bq.js
 
 
-const selectBq = async (creds, query) => {
+const selectBq = async (serviceAccount, query) => {
   try {
-    const bq = new src.BigQuery(creds)
+    const { client_email, private_key, project_id: projectId } = serviceAccount
+
+    const options = {
+      projectId,
+      credentials: { client_email, private_key }
+    }
+
+    const bq = new src.BigQuery(options)
 
     const [job] = await bq
       .createQueryJob({
@@ -64670,8 +64677,8 @@ const selectBq = async (creds, query) => {
 
     const [rows] = await job.getQueryResults()
     return rows
-  } catch (err) {
-    throw new Error('SQL query failed.')
+  } catch (e) {
+    throw new Error(e.message)
   }
 }
 
