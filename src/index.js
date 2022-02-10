@@ -8,7 +8,7 @@ const main = async () => {
     const credentials = JSON.parse(core.getInput('gcp_service_account', { required: true }))
 
     const rows = await selectBq(credentials, sql)
-    const message = JSON.stringify(rows)
+    const message = JSON.stringify(rows, null, 2)
 
     await sendSlack(webhook, message)
   } catch (error) {
