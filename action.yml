@@ -1,0 +1,18 @@
+name: 'BigQuery SQL execution with Slack Notification for results'
+description: 'Send slack notification with BQ results'
+branding:
+  icon: 'activity'  
+  color: 'green'
+inputs:
+  slack_webhook:
+    description: 'Slack Incoming Webhook URL to use for notifications'
+    required: true
+  sql:
+    description: 'SQL to run agains BQ'
+    required: true
+  gcp_service_account:
+    description: 'GCP service account with proper authorization to perform BQ queries'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
