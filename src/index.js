@@ -1,5 +1,5 @@
 import core from '@actions/core'
-import { selectBq, sendSlack } from './utils/index.js'
+import { selectBq, sendSlack, formatMessage } from './utils/index.js'
 
 const main = async () => {
   try {
@@ -7,8 +7,8 @@ const main = async () => {
     const sql = core.getInput('sql', { required: true })
     const credentials = JSON.parse(core.getInput('gcp_service_account', { required: true }))
 
-    const rows = await selectBq(credentials, sql)
-    const message = JSON.stringify(rows, null, 2)
+    const data = await selectBq(credentials, sql)
+    const message = formatMessage(data)
 
     await sendSlack(webhook, message)
   } catch (error) {
