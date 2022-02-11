@@ -29,6 +29,9 @@ jobs:
             SELECT * FROM something
 ```
 
+## Sample output
+<img width="722" alt="Screen Shot 2022-02-12 at 2 41 48" src="https://user-images.githubusercontent.com/14939326/153642382-ef30fe8c-005a-48cc-8893-2f8c9eb2c30b.png">
+
 ## Development
 ```bash
 npm i
