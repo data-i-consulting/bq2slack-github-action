@@ -18,7 +18,7 @@ export const formatMessage = (rows) => {
         elements: [
           {
             type: "mrkdwn",
-            text: `:spiral_calendar_pad: Date: *${new Date().toISOString().slice(0, 15).replace("T", "")}*`
+            text: `:spiral_calendar_pad: Date: *${new Date().toISOString().slice(0, 16).replace("T", " ")}*`
           }
         ]
       },
