@@ -17,7 +17,7 @@ jobs:
     name: Execute SQL query and send results to Slack
     steps:
       - name: Run
-        uses: data-i-consulting/bq2slack-github-action@v1.0.6 # use the latest tag
+        uses: data-i-consulting/bq2slack-github-action@v1.0.7 # use the latest tag
         with:
           slack_webhook: ${{secrets.SLACK_WEBHOOK}}
           gcp_service_account: ${{secrets.GCP_SERVICE_ACCOUNT}}
